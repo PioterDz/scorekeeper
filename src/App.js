@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import PlayersList from './components/PlayersList/PlayersList';
 import AddPlayer from './components/AddPlayer/AddPlayer';
+import ChangeFactor from './components/ChangeFactor/ChangeFactor';
 
 class App extends Component {
   constructor() {
@@ -13,15 +14,17 @@ class App extends Component {
     }
   }
 
-  onScoreUpdate = (playerIndex, scoreChange) => {
+  onScoreUpdate = (playerIndex, factorChoosed) => {
+    const { players } = this.state;
     this.setState({
-      players: this.state.players.map((player, index) => {
+      players: players.map((player, index) => {
         if (index === playerIndex) {
-          return { ...player, score: player.score + scoreChange };
+          return { ...player, score: player.score + factorChoosed };
         }
         return player;
       })
     })
+    console.log(this.state);
   }
 
   onPlayerAdd = (playerName) => {
@@ -41,11 +44,26 @@ class App extends Component {
     })
   }
 
+  onChangeFactor = (factorChoosed) => {
+    const { factor } = this.state;
+    const intFactor = Number(factorChoosed);
+    if(isNaN(intFactor)) {
+      this.setState({
+        factor
+      })
+    } else {
+      this.setState({
+        factor: intFactor
+      })
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <AddPlayer onPlayerAdd={this.onPlayerAdd} />
-        <PlayersList players={this.state.players} onScoreUpdate={this.onScoreUpdate} onPlayerRemove={this.onPlayerRemove} />
+        <ChangeFactor onChangeFactor={this.onChangeFactor} />
+        <PlayersList players={this.state.players} factor={this.state.factor} onScoreUpdate={this.onScoreUpdate} onPlayerRemove={this.onPlayerRemove} />
       </div>
     );
   }

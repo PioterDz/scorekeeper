@@ -1,5 +1,9 @@
 .Player {
     margin: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .Player__name, .Player__score, .Player__remove {

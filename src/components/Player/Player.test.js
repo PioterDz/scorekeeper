@@ -18,19 +18,19 @@ it('renders correct score', () => {
     const scoreParsed = Number(scoreRendered);
     expect(scoreParsed).toEqual(scorePassed);
 });
-it('should call onPlayerScoreChange with 1 when plus button is clicked', () => {
+it('should call onPlayerScoreChange when plus button is clicked', () => {
     const mockedOnPlayerScoreChange = jest.fn();
     const playerComponent = shallow(<Player onPlayerScoreChange={mockedOnPlayerScoreChange} />);
     const plusButton = playerComponent.find('.Player__button').first();
     plusButton.simulate('click');
-    expect(mockedOnPlayerScoreChange).toBeCalledWith(1);
+    expect(mockedOnPlayerScoreChange).toBeCalled();
 });
-it('should call onPlayerScoreChange with -1 when minus button is clicked', () => {
+it('should call onPlayerScoreChange when minus button is clicked', () => {
     const mockedOnPlayerScoreChange = jest.fn();
     const playerComponent = shallow(<Player onPlayerScoreChange={mockedOnPlayerScoreChange} />);
     const minusButton = playerComponent.find('.Minus__button');
     minusButton.simulate('click');
-    expect(mockedOnPlayerScoreChange).toBeCalledWith(-1);
+    expect(mockedOnPlayerScoreChange).toBeCalled();
 });
 it('should call onPlayerRemove when button is clicked', () => {
     const mockedOnPlayerRemove = jest.fn();

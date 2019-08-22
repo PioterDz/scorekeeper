@@ -1,5 +1,5 @@
 .AddPlayer {
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .AddPlayer__submit, .AddPlayer__input {
@@ -26,4 +26,8 @@
     height: 30px;
     padding: 5px 15px;
     font-size: 16px;
+}
+
+.ChangeFactor {
+    margin-top: 15px;
 }

@@ -9,6 +9,7 @@ const PlayersList = (props) => (
             key={i}
             name={player.name}
             score={player.score}
+            factor={props.factor}
             onPlayerScoreChange={(points) => props.onScoreUpdate(i, points)}
             onPlayerRemove={() => props.onPlayerRemove(i)}
             />)
