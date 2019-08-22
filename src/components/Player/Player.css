@@ -1,0 +1,44 @@
+.Player {
+    margin: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Player__name, .Player__score, .Player__remove {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.Player__button {
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.Player__button:hover {
+    cursor: pointer;
+    filter: brightness(75%);
+}
+
+.Plus__button {
+    color: green;
+    background-color: lightgreen;
+    padding: 10px 15px;
+}
+
+.Minus__button {
+    color: darkred;
+    background-color: red;
+    padding: 10px 17px;
+}
+
+.Remove__button {
+    font-weight: bold;
+    color: darkred;
+    border: 1px solid darkred;
+    border-radius: 7px;
+    padding: 10px;
+}
