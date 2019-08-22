@@ -1,0 +1,29 @@
+.AddPlayer {
+    margin-top: 20px;
+}
+
+.AddPlayer__submit, .AddPlayer__input {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: none;
+    border-radius: 7px;
+}
+
+.AddPlayer__submit {
+    background-color: greenyellow;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.AddPlayer__submit:hover {
+    filter: brightness(75%);
+}
+
+.AddPlayer__input {
+    width: 200px;
+    height: 30px;
+    padding: 5px 15px;
+    font-size: 16px;
+}
